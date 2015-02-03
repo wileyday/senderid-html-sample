@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<?php
+$api_key = '__YOUR_API_KEY__';
+$api_secret = '__YOUR_API_SECRET__';
+$timestamp = time();
+$salt = uniqid();
+$data = strval($timestamp) . $salt;
+$signature = hash_hmac('md5', $data, $api_secret);
 ?>
 <html lang="ko" xml:lang="ko" xmlns="http://www.w3.org/1999/xhtml">
         <head>
